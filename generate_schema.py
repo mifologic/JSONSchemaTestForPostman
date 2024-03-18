@@ -14,7 +14,6 @@ def generate_schema(response):
     builder = SchemaBuilder()
     builder.add_object(response.json())
     schema = builder.to_schema()
-    print(type(schema))
     schema.update({"additionalProperties": False})
 
     result = f'''
