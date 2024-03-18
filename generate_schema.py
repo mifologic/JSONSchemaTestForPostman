@@ -19,7 +19,7 @@ def generate_schema(response):
     result = f'''
     const schema = {json.dumps(schema)};
     
-    pm.test("Validate schema", () = > {{
+    pm.test("Validate schema", () => {{
         pm.response.to.have.jsonSchema(schema);
     }});
 
