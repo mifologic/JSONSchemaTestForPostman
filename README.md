@@ -39,6 +39,9 @@ python -m pip install -r requirements.txt
 ```commandline
 python start_schema_generator.py GET https://yoururl.com
 ```
+
+В ответ вернётся сгенерированный тест для Postam, который можно скопировать и добавить на вкладку Test для этого метода.
+
 ----
 ### Примеры, с помощью которых можно проверить работу проекта:
 **GET-metod**:
