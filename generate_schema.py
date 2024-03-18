@@ -17,6 +17,8 @@ def generate_schema(response):
     schema.update({"additionalProperties": False})
 
     result = f'''
+    response = pm.response.json()
+    
     const schema = {json.dumps(schema)};
     
     pm.test("Validate schema", () => {{
@@ -25,6 +27,10 @@ def generate_schema(response):
 
     const  Ajv = require('ajv');
     ajv = new Ajv({{logger: console}});
+
+    pm.test('Response matches the schema', function() {{
+        pm.expect(ajv.validate(schema, response)).to.be.true;
+    }});
 
     if (ajv.errors) {{
     console.log(ajv.errors);
