@@ -1,6 +1,5 @@
 import argparse
 import json
-import sys
 
 from get_data_for_schema_generation import get_data_for_schema_generation
 
@@ -27,7 +26,3 @@ if args.body:
 
 if __name__ == '__main__':
     start_generator(args.method, args.url, data)
-
-# python3 start_schema_generator.py POST https://fakerestapi.azurewebsites.net/api/v1/Activities --body="{\"id\":0,\"title\":\"Activity 14\",\"dueDate\":\"2024-03-17T20:57:04.425Z\",\"completed\":false}"
-# python3 start_schema_generator.py GET https://fakerestapi.azurewebsites.net/api/v1/Books
-
